@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "c400d153-36db-4cc1-9e9b-ff7efb9370b7",
+		"name": "nueva prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46452266",
+		"_collection_link": "https://juani-9919705.postman.co/workspace/Juani's-Workspace~0452961c-82d6-4e69-89af-c534a115a3c9/collection/46452266-c400d153-36db-4cc1-9e9b-ff7efb9370b7?action=share&source=collection_link&creator=46452266"
+	},
+	"item": [
+		{
+			"name": "Sintaxis postman",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const elpanaJason = pm.response.json();\r",
+							"const suPueblo = elpanaJason.trello\r",
+							"const suCasa = elpanaJason.trello[0]\r",
+							"const suNombre = elpanaJason.trello[0].name\r",
+							"const suCara = elpanaJason.trello[0].native\r",
+							"const susGatos = elpanaJason.trello[0].sheetX\r",
+							"const suNovia = elpanaJason.trello[0].texts\r",
+							"const suTDC = elpanaJason.saipay\r",
+							"const suMejorAmigo = elpanaJason.trello[0].keywords[1]\r",
+							"const susPanas = elpanaJason.trello[0].keywords\r",
+							"\r",
+							"pm.test(\"Esto debe ser un Objeto\",()=>{\r",
+							"    pm.expect(elpanaJason).to.be.an(\"object\")\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un array\",()=>{\r",
+							"    pm.expect(suPueblo).to.be.an(\"array\")\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un objeto casa\",()=>{\r",
+							"    pm.expect(suCasa).to.be.an(\"object\")\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un nombre string\",()=>{\r",
+							"    pm.expect(suNombre).to.be.a(\"string\").and.to.be.eql(\"GRINNING FACE\")\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un Emoji\",()=>{\r",
+							"    pm.expect(suCara).to.be.a(\"string\")\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un numero\",()=>{\r",
+							"    pm.expect(susGatos).to.be.a(\"number\").and.to.be.eql(30)\r",
+							"});\r",
+							"pm.test(\"Esto debe ser una no novia\",()=>{\r",
+							"    pm.expect(suNovia).to.be.a.null\r",
+							"});\r",
+							"pm.test(\"Esto debe ser una TDC\",()=>{\r",
+							"    pm.expect(suTDC).to.be.a.undefined\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un valor dentro de un Array\",()=>{\r",
+							"    pm.expect(suMejorAmigo).to.be.oneOf([\"grin\"])\r",
+							"});\r",
+							"pm.test(\"Esto debe ser un Array que tiene un valor\",()=>{\r",
+							"    pm.expect(susPanas).to.include(\"face\")\r",
+							"});\r",
+							"\r",
+							"console.log (susPanas);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dom}}/emoji",
+					"host": [
+						"{{dom}}"
+					],
+					"path": [
+						"emoji"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sintaxis postman body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json();\r",
+							"const juanito = body.trello[1]\r",
+							"\r",
+							"const myTest = { \r",
+							"    \"name\": \"GRINNING FACE WITH SMILING EYES\",\r",
+							"    \"native\": \"😁\",\r",
+							"    \"shortName\": \"grin\"\r",
+							"   };\r",
+							"\r",
+							"pm.test(\"Deberia contener un valor dentro del objeto\",()=>{\r",
+							"    pm.expect(juanito).to.include(myTest)\r",
+							"});\r",
+							"\r",
+							"\r",
+							"console.log(juanito)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dom}}/emoji",
+					"host": [
+						"{{dom}}"
+					],
+					"path": [
+						"emoji"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
