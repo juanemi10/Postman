@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "7cfcbc0c-d426-4b76-be4c-c33599b1e58d",
+		"name": "Test2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46452266",
+		"_collection_link": "https://juani-9919705.postman.co/workspace/Juani's-Workspace~0452961c-82d6-4e69-89af-c534a115a3c9/collection/46452266-7cfcbc0c-d426-4b76-be4c-c33599b1e58d?action=share&source=collection_link&creator=46452266"
+	},
+	"item": [
+		{
+			"name": "Get test",
+			"item": [
+				{
+					"name": "Request GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/:id?key={{key}}&token={{token}}",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "68939ec576d8d4731bc68b95"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test GET",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/:id?key={{key}}&token={{token}}",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "689a795b81b0bf1c7d014115"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST Test",
+			"item": [
+				{
+					"name": "Request POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/?key={{key}}&token={{token}}&name=New Card&desc=This is a description &idList=68939eb7f0c080acd6b1b757",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "New Card"
+								},
+								{
+									"key": "desc",
+									"value": "This is a description "
+								},
+								{
+									"key": "idList",
+									"value": "68939eb7f0c080acd6b1b757"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test POST",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/?key={{key}}&token={{token}}&name=New Card&desc=This is a description &idList=68939eb7f0c080acd6b1b757",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "New Card"
+								},
+								{
+									"key": "desc",
+									"value": "This is a description "
+								},
+								{
+									"key": "idList",
+									"value": "68939eb7f0c080acd6b1b757"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT Test",
+			"item": [
+				{
+					"name": "Request PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/:id?key={{key}}&token={{token}}&name=New Card update&desc=This is a description new 2.0",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "New Card update"
+								},
+								{
+									"key": "desc",
+									"value": "This is a description new 2.0"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "689e5922ed53a84601d57f99"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test PUT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 400ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/:id?key={{key}}&token={{token}}&name=New Card update&desc=This is a description new 2.0",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "name",
+									"value": "New Card update"
+								},
+								{
+									"key": "desc",
+									"value": "This is a description new 2.0"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "689e5922ed53a84601d57f99"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE Test",
+			"item": [
+				{
+					"name": "Request DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/:id?key={{key}}&token={{token}}",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "689e5a8c05bf50516d0fd30d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dom}}/{{cards}}/:id?key={{key}}&token={{token}}",
+							"host": [
+								"{{dom}}"
+							],
+							"path": [
+								"{{cards}}",
+								":id"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "689e5a8c05bf50516d0fd30d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "ATTA721901767508f2ee04622550ca70d975feb979056e5f0f6dde5d3aa5649ac4b3BC276279",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dom",
+			"value": "https://api.trello.com/1",
+			"type": "string"
+		}
+	]
+}
